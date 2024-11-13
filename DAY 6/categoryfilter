@@ -1,0 +1,67 @@
+Skip to content
+Navigation Menu
+Product
+Solutions
+Resources
+Open Source
+Enterprise
+Pricing
+
+Search or jump to...
+Sign in
+Sign up
+Sharu-06
+/
+221_Sharini
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Breadcrumbs221_Sharini/221_Sharini_React.js/Day 6
+/categoryfilter
+Go to file
+Latest commit
+ 
+History
+File metadata and controls
+
+Code
+
+Blame
+21 lines (18 loc) · 622 Bytes
+// src/components/CategoryFilter.js
+import React, { useContext } from 'react';
+import { ProductContext } from './ProductContext';
+
+const CategoryFilter = () => {
+  const { categories, setSelectedCategory } = useContext(ProductContext);
+
+  return (
+    <div>
+      <h3>Filter by Category</h3>
+      <select onChange={(e) => setSelectedCategory(e.target.value)}>
+        <option value="">All Categories</option>
+        {categories.map((category, index) => (
+          <option key={index} value={category}>{category}</option>
+        ))}
+      </select>
+    </div>
+  );
+};
+
+export default CategoryFilter;
+Footer
+© 2024 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact
+Manage cookies
+Do not share my personal information
